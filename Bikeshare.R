@@ -7,6 +7,7 @@ library(ggplot2)
 library(dplyr)
 library(lubridate)
   ## Question 01 ##
+   #Tabels#
 #We create a new column that fuses the names of Start and End Station, then use the table() function to have the count.
 #Finally, we order the table in descending order.
 ny$Full_Trip=paste(ny$Start.Station,"-",ny$End.Station)
@@ -28,6 +29,7 @@ Contingency_table
 #Finally We perform a Khi test, an addition to test if the two variables are dependents
 chisq.test(Contingency_table)
 
+   #Graphics#
 #To create the Barplot we construct each layer separately and store it in a name
 p=ggplot(Sub_data[Sub_data$User.Type=="Subscriber"|Sub_data$User.Type=="Customer",], aes(x=User.Type, fill=Full_Trip))
 
@@ -48,6 +50,7 @@ gm_labs=labs(title="Percentage of customers and subscribers in the top 5 full tr
 p+gm_bar+gm_text+gm_legend+gm_labs+scale_y_continuous(labels = scales::percent)
 
   ## Question 02 ##
+   #Tabels#
 #We use ifelse() function to create a new column for the trip duration class, divided into two levels.
 wash$Trip_Dur_Class=ifelse(wash$Trip.Duration/86400<=1,"Day","Over_Day")
 
@@ -64,6 +67,7 @@ prop.table(table(wash_sub1$User.Type,wday(wash_sub1$Time,label=TRUE)),1)
 labs1=labs(title="Distribution of day of the month count across six months periode",y="Day of month count",x="Time")
 wash %>% ggplot(aes(as.POSIXct(Time)))+geom_freqpoly(binwidth = 86400)+theme(aspect.ratio=5/10)+labs1
 
+   #Graphics#
 #To create the Barplot we construct each layer separately.
 q=ggplot(wash_sub1,aes(x=User.Type,fill=wday(Time,label=TRUE)))
 bar=geom_bar(aes( y =..count..), position="dodge")
@@ -72,6 +76,7 @@ labs2=labs(title="DOW count by user type for a day or less of trip duration",y="
 q+bar+txt+labs2
 
   ## Question 03 ##
+   #Tabels#
 #We created two sub-data depending on the missing values of "Birth Year", one where rows have no missing values(chi_sub) and one where there is the only row of missing values(chi_na).
 chi_sub=subset(chi,!is.na(Birth.Year))
 chi_na=subset(chi,is.na(Birth.Year))
@@ -83,6 +88,7 @@ x=x[-which(x$Birth.Year %in% outliers),]
 
 summary(chi_na[,c(4,7)])
 
+   #Graphics#
 #The scatter plot is created like those before by layers.
 s=ggplot(aes(x=Birth.Year, y=Trip.Duration), data=x)
 s.point=geom_point(alpha=2/10, position = position_jitter(h=0), color='green')
