@@ -1,7 +1,7 @@
 #I used the large data set provided in the resource.
-ny = read.csv('new_york.csv')
-wash = read.csv('washington.csv')
-chi = read.csv('chicago.csv')
+ny = read.csv(file.choose(),sep=",")
+wash = read.csv(file.choose(),sep=",")
+chi = read.csv(file.choose(),sep=",")
 
 library(ggplot2)
 library(dplyr)
