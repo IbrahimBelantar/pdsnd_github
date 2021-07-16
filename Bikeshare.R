@@ -94,4 +94,4 @@ labels=labs(title="Variation of time duration by year of birth",x="Year of Birth
 s+s.point+s.line+s.line.9+s.line.1+coord+labels
 
 #Spearman correlation test is an addition to confirm the results, we used Spearman because of the discrete variable "Birth.Year" and for not checking the test's assumptions.
-cor.test(x$Birth.Year,x$Trip.Duration)
+cor.test(x$Birth.Year,x$Trip.Duration,method="spearman")
