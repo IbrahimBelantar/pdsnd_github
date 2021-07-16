@@ -89,7 +89,9 @@ s.point=geom_point(alpha=2/10, position = position_jitter(h=0), color='green')
 s.line=geom_line(stat = 'summary', fun.y=mean)
 s.line.9=geom_line(stat = 'summary', fun.y = quantile,linetype=2,fun.args = list(probs =0.9),color="blue")
 s.line.1=geom_line(stat = 'summary', fun.y = quantile,linetype=2,fun.args = list(probs =0.1),color="blue")
-s+s.point+s.line+s.line.9+s.line.1+coord_trans(y='sqrt')+labs(title="Variation of time duration by year of birth",x="Year of Birth",y="Time Duration")
+coord=coord_trans(y='sqrt')
+labels=labs(title="Variation of time duration by year of birth",x="Year of Birth",y="Time Duration")
+s+s.point+s.line+s.line.9+s.line.1+coord+labels
 
 #Spearman correlation test is an addition to confirm the results, we used Spearman because of the discrete variable "Birth.Year" and for not checking the test's assumptions.
 cor.test(x$Birth.Year,x$Trip.Duration)
