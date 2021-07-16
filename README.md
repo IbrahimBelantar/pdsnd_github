@@ -1,17 +1,36 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
+Friday 7/16/2021
 
 ### Project Title
-Replace the Project Title
+*Exploring the Bikeshare data*
 
 ### Description
-Describe what your project is about and what it does
+<div style="text-align: justify">
+In this project, we explore data related to bike share systems for three major cities in the United States: <b>Chicago</b>,<b> New York City</b>, and <b>Washington</b>. We will answer three questions about it by computing descriptive statistics and making visualizations. The three questions are as followed:
+</div>
+
+<div style="text-align: justify">
+
+1. What are the top 5 full trips, from start to end station?(Described by user type)
+2. What is the most common day of week for users with a rental duration of a day or less?(i.e., occurs most often in the start time)
+3. Is there a difference of time duration across the year of birth?
+</div>
+
+* #### Software
+R 4.1.0   
+Atom
+* #### Packages
+  * *ggplot2* (R)
+  * *dplyr* (R)
+  * *lubridate* (R)
+  * *atom-language-r* (Atom)
 
 ### Files used
-Include the files used
+The raw data is provided in the csv files for each city.  
+The "*Bikeshare.R*" file contains the code used for answering the three questions.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+<div style="text-align: justify">
+I would like to thank Udacity (Staff, Mentors, and reviewers) for the amazing course they have provided, it was an incredible journey to be part of. :smile: :green_heart: :octocat:
+</div>
