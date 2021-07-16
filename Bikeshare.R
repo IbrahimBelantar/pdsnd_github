@@ -1,4 +1,4 @@
-#I used the large data set provided in the resource.
+#I used the large data set provided in the resource, file.choose() let you open the csv files from a window directly in your local computer.
 ny = read.csv('new_york.csv')
 wash = read.csv('washington.csv')
 chi = read.csv('chicago.csv')
